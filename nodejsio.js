@@ -1,7 +1,5 @@
 'use strict';
 
-const fs = require('fs');
-
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
 
@@ -24,8 +22,25 @@ function readLine() {
     return inputString[currentLine++];
 }
 
-// Complete the birthdayCakeCandles function below.
-function birthdayCakeCandles(ar) {
+// Complete the miniMaxSum function below.
+function miniMaxSum(arr) {
+    var minSum = 0,maxSum = 0;
+    arr.sort();
+    for (var i = 0; i < arr.length; i++){
+        if (i < 4) {
+            minSum += arr[i];   
+        }
+        if (i > 0) {
+            maxSum += arr[i];   
+        } 
+    }
+    process.stdout.write(minSum+' '+maxSum);
 
-    process.stdout.write("hello: ");
 }
+
+function main() {
+    const arr = readLine().split(' ').map(arrTemp => parseInt(arrTemp, 10));
+
+    miniMaxSum(arr);
+}
+
