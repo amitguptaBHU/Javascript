@@ -1,0 +1,4 @@
+<span ng-if="vm.editMode">
+  <input type="{{vm.fieldType}}" ng-model="vm.fieldValue">
+</span>
+<button ng-click="vm.onModeChange()">{{vm.editMode ? 'Save' : 'Edit'}}</button>

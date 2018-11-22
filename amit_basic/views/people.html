@@ -1,0 +1,9 @@
+<div class="col-sm-12" ng-repeat="(key, value) in vm.data">
+    <label class="col-sm-4" style="clear:left;">{{key}}</label>
+    <div class="col-sm-6" ng-if="key !== 'Name'">{{value}}</div>
+    <div class="col-sm-6" ng-if="key === 'Name'"><a
+    	ng-click="vm.toggleValue()" ng-if="vm.showValue">{{value}} </a>
+        <span ng-if="!vm.showValue">{{value}}</span>
+        <edit field-value="value" on-update="vm.update(value)" ng-if="!vm.showValue"></edit>
+    </div>
+</div>
